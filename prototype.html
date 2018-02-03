@@ -1,0 +1,73 @@
+# -vue.js
+关于使用Vue.js的项目
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+//			function foo(a,b){
+//				return a*b;
+//			}
+//			console.log(foo.length);
+//			console.log(foo.constructor);
+//			console.log(foo.prototype);
+//			foo.prototype={};
+//			function Product(name,color){
+//				this.name= name;
+//				this.color=color;
+//				this.whatAreYou=function(){
+//					return "this is a "+this.color+""+this.name;
+//				};
+//			}
+//       var obj ={};
+//       console.log(obj.__proto__);
+var obj={
+	x:10,
+	fn:function(){
+		console.log(this);
+		console.log(this.x);
+	}
+};
+obj.fn();
+var fn1=obj.fn;
+fn1();
+
+var obj={
+	x:10,
+	fn:function (){
+		function f()  {
+			console.log(this);
+			console.log(this.x);
+		}
+		f();
+	}
+};
+obj.fn();       
+ var a =10;
+ function fn(){
+ 	var b =20;
+ 	function bar() {
+ 		console.log(a+b);
+ 	}
+ 	return bar;
+ }
+ var x = fn(),
+    b=200;
+    x();
+    
+    var arr =[]
+    for(var i=0;i<3;i++){
+    	arr[i]=function(){
+    		console.log(this);
+    	}
+    };
+    var fn=arr[0]
+    arr[0]();
+    fn();
+    var obj 
+		</script>
+	</body>
+</html>
