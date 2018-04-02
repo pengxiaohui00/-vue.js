@@ -1,0 +1,97 @@
+
+.cover{
+    position: absolute;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(http://ww1.sinaimg.cn/large/006JM2pKgy1fpy3q8u0z5j306405mmxa.jpg) center center no-repeat;
+    background-size: cover;
+    filter: opacity(0.2);
+}
+.music-box{
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%,-50%);
+    font-family: cursive;
+    font-size: 16px;
+    color: #f06d6a;
+    width: 340px;
+}
+.music-panel{
+    border: 1px solid #76dba3;
+    padding: 20px 20px 5px 20px;
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1), 0px 2px 10px 0px rgba(0,0,0,0.5);
+    background-color: rgba(255,255,255,0.9)
+}
+.music-box .control{
+    margin-top: 20px;
+    font-size: 22px;
+    color: #ee8a87;
+    float: left;
+}
+.music-box .control .fa{
+    margin-right: 12px;
+    cursor: pointer;
+}
+.music-box .control .fa.disable{
+    opacity: 0.3;
+}
+.music-box .info{
+    margin-left: 120px;
+}
+.music-box .info .title{
+    font-size: 18px;
+}
+.music-box .info .auther{
+    font-size: 13px;
+}
+.music-box .progress{
+    width: 260px;
+}
+.music-box .progress .bar{
+    height: 3px;
+    margin-top: 5px;
+    background-color: rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+.music-box .progress .progress-now{
+    background-color: #ee8a87;
+    height: 3px;
+    width: 0;
+    position: relative;
+}
+.music-box .time{
+    text-align: right;
+}
+.music-box:after,
+.music-box .music:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.music-box .list{
+    list-style: none;
+}
+.music-box .list>li{
+    position: relative;
+    padding: 4px 10px;
+    border: 1px solid rgba(255,255,255,0.8);
+    border-top: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+.music-box .list>li:hover{
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.music-box .list>li.palying:before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 30px;
+    background-color: rgba(255,255,255,0.8);
+}
