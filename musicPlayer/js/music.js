@@ -65,7 +65,7 @@ progressBarNode.onclick = function(e){
 };
 
 musicListContainer.onclick = function (e) {
-    if(e.targetName.toLowerCase()==="li"){
+    if(e.target.tagName.toLowerCase()==="li"){
         for(var i=0;i<this.children.length;i++){
             if(this.children[i]=== e.target){
                 musicIndex=i;
