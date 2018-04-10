@@ -1,0 +1,248 @@
+
+header{
+    position: relative;
+    height: 100%;
+    min-height: 600px;
+    background: #000  url("../images/3.jpg") center center no-repeat;
+    background-size: cover;
+}
+nav .logo{
+    color: #f7ba3e;
+    font-size: 32px;
+    float: left;
+    margin-top: 10px;
+}
+nav ul{
+    float: right;
+}
+nav li{
+    float: left;
+    margin: 10px;
+}
+header a{
+    display: inline-block;
+    color: #fff;
+    font-size: 16px;
+    padding: 16px;
+
+}
+header a:hover{
+    color:#f7ba3e;
+    text-decoration:none;
+}
+header .intro{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #f00;
+    text-align: center;
+}
+header .intro h1{
+    font-size: 32px;
+}
+header .intro h2{
+    font-size: 46px;
+    margin-top: 20px;
+
+}
+header .intro .button{
+    margin-top: 20px;
+}
+section{
+    margin-top: 100px;
+    text-align: center;
+}
+section p{
+    color: #777;
+}
+section.king-intro>h2{
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+section.king-intro p{
+    margin-top: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+section.king-intro .iconfont{
+    font-size: 100px;
+    color: #f6bf01;
+}
+section .king-intro h3{
+    font-size: 20px;
+}
+section.king-intro>ul>li{
+    float: left;
+    width: calc(33.33% - 20px);
+    padding: 10px 20px;
+}
+section .family figure{
+    width: calc(33.33% - 20px);
+    height: 240px;
+    margin: 10px;
+    float: left;
+}
+section .family a{
+    display: block;
+    height: 180px;
+}
+section .family img{
+    width: 100%;
+    height: 100%;
+}
+section .family figcaption{
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+section .family p{
+    color: #666;
+    margin-top: 10px;
+}
+section .time-line>li{
+    margin-top:40px;
+    position: relative;
+    min-height: 200px;
+}
+section .time-line>li::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+section .time-line>li:nth-child(odd){
+    padding-right: calc(50% - 50px);
+    text-align: right;
+}
+section .time-line>li:nth-child(even){
+    padding-left: calc(50% - 50px);
+    text-align: left;
+}
+section .time-line img{
+    font-size: 12px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #46b8da;
+}
+section .time-line>li:nth-child(odd) img {
+    float: right;
+}
+section .time-line>li:nth-child(even) img {
+    float: left;
+}
+section .time-line .img
+{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #fed136;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+    background-color: #fed136;
+    color: #fff;
+}
+section .time-line>li:nth-child(odd) dl{
+    margin-right: 120px;
+    margin-left: 0;
+}
+section .time-line>li:nth-child(even) dl{
+    margin-right: 0;
+    margin-left: 120px;
+}
+section .time-line dt{
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+section .time-line dd{
+    color: #777;
+}
+section .time-line>li::before{
+    position: absolute;
+    content: "";
+    display: inline-block;
+    left: 50%;
+    top: 100px;
+    margin-left: 0px;
+    height: 200px;
+    width: 3px;
+    background-color: #46b8da;
+    font-size: 20px;
+    font-weight: bold;
+}
+section .time-line .last::before{
+    display: none;
+}
+#character{
+    text-align: center;
+    min-height: 400px;
+}
+#character .row {
+    width: calc(33.33% - 20px);
+    margin: 10px;
+    float: left;
+}
+#character .row::after {
+    content: "";
+    display:block;
+    clear: both;
+}
+#character .row img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid #46b8da;
+}
+#character .row li{
+    display: inline-block;
+    margin: 5px;
+}
+#character .row a:hover{
+    text-decoration: none;
+    color:#fed136;
+}
+#character .iconfont{
+    font-size:30px ;
+}
+#contact{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    min-height: 600px;
+    background: #000  url("../images/2.jpg") center center no-repeat;
+    background-size: cover;
+}
+#contact .row h2{
+    color: #fff;
+    font-size: 40px;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+#contact .row h3{
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 150px;
+}
+#contact .form{
+    float: left;
+    width: 50%;
+}
+#contact #success button{
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-color: #fed136;
+    color: #fff;
+    padding: 20px 40px;
+    display: inline-block;
+    border-radius: 3px;
+    opacity: 0.8;
+}
+#contact #success button:hover{
+    opacity: 1;
+}
+
