@@ -2,123 +2,27 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/index.css"/>
     <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.js"></script>
     <title>购物车</title>
 </head>
-<style>
-    *{
-        box-sizing: border-box;
-    }
-    body,ul,li,p{
-        margin: 0;
-        padding: 0;
-    }
-    ol,ul{
-        list-style: none;
-    }
-    body{
-        font: 12px/150% Arial,Verdana,"\5b8b\4f53";
-        color: #666;
-    }
-    a {
-        color: #666;
-        text-decoration: none;
-    }
-    .clearfix:after{
-        content:'';
-        display: block;
-        clear: both;
-    }
-    .clearfix{
-        *zoom: 1;
-    }
-    .layout{
-        width: 702px;
-        margin: 10px auto;
-    }
-    .btn{
-        display: inline-block;
-        border: 1px solid #ccc;
-        color: #333;
-        padding: 10px 15px;
-        border-radius: 5px;
-        text-align: center;
-        background-color: #fff;
-        cursor: pointer;
-    }
-    .commodity {
-       position: relative;
-        float: left;
-        width: 220px;
-        padding: 10px 20px;
-        margin-left: 20px;
-        margin-top: 20px;
-        text-align: center;
-        border: 1px solid #eee;
-        background-color: #fff;
-    }
-    .commodity img{
-        width: 100%;
-        height: 100%;
-    }
-    .cover{
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        background-color: rgba(0,0,0,0.5);
-        transition: all 0.3s;
-        opacity: 0;
-    }
-    .cover .btn{
-        position:absolute;
-        top:50%;
-        left:50%;
-        transform:translate(-50%,-50%);
-    }
-    .commodity.hover .cover{
-        opacity: 1;
-    }
-    .commodity-ct{
-        margin-left: -20px;
-        margin-top: -20px;
-    }
-    .commodity-name{
-        height: 36px;
-        text-align: left;
-        font-weight: 400;
-        font-size: 16px;
-        color: #0000ff;
-    }
-    .commodity-price{
-        text-align: left;
-        color: #ff0000;
-        
-    }
-    .btn{
-        margin-top: 20px;
-        margin-right: 20px;
-    }
-
-</style>
 <body>
 <div class="layout">
     <h1>购物车</h1>
     <ul class="commodity-ct clearfix">
         <li class="commodity">
             <div class="cover">
-                <a href="#" class="btn action-delete">删除</a>
-</div>
-<a href="#">
-    <img src="https://picsum.photos/200/?image=20" alt=""/>
-    <div class="commodity-name">红宝石</div>
-    <div class="commodity-price">￥16.00</div>
-</a>
-</li>
+                 <a href="#" class="btn action-delete hide" >删除</a>
+             </div>
+            <a href="#">
+            <img src="https://picsum.photos/200/?image=20" alt=""/>
+            <div class="commodity-name">红宝石</div>
+            <div class="commodity-price">￥16.00</div>
+            </a>
+        </li>
 <li class="commodity">
     <div class="cover">
-        <a href="#" class="btn action-delete">删除</a>
+        <a href="#" class="btn action-delete hide">删除</a>
     </div>
     <a href="#">
         <img src="https://picsum.photos/200/?image=10" alt=""/>
@@ -128,7 +32,7 @@
 </li>
 <li class="commodity">
     <div class="cover">
-        <a href="#" class="btn action-delete">删除</a>
+        <a href="#" class="btn action-delete hide">删除</a>
     </div>
     <a href="#">
         <img src="https://picsum.photos/200/?image=100" alt=""/>
@@ -140,53 +44,7 @@
 <a href="#" class="btn btn-add">添加</a>
 <a href="#" class="btn btn-edit">编辑</a>
 </div>
-<script>
-    function getCommodityHtml(commodity){
-        var html='';
-        html +='<li class="commodity">'
-        html +='<div class="cover"><a href="#" class="btn action-delete">删除</a></div>';
-        html +='<a href="#">';
-        html +='<img src="'+commodity.img+'" alt=""/>';
-        html +='<div class="commodity-name">'+commodity.name+'</div>';
-        html +='<div class="commodity-price">'+commodity.price+'</div>'
-        html +='</a>';
-        html +='</li>';
-        return html;
-    }
-
-    function getDate(){
-        var result = [];
-        for(var i=0;i<3;i++){
-            var rand =Math.floor(Math.random()*100);
-            var date ={
-                img:'//picsum.photos/200/?image='+rand,
-                name:'珍珠',
-                price:'￥'+rand
-            };
-            result.push(date)
-        };
-        return result;
-    }
-
-    $('.btn-add').on('click',function(e){
-        e.preventDefault();
-        $('.commodity').removeClass('hover');
-        var products= getDate();
-        $.each(products,function(idx,commodity){
-            var html =getCommodityHtml(commodity);
-            $('.commodity-ct').append(html)
-        })
-    });
-
-    $('.btn-edit').on('click',function(e){
-        e.preventDefault();
-        $('.commodity').toggleClass("hover")
-    });
-
-    $('.commodity-ct').on('click',".action-delete",function(e){
-        e.preventDefault();
-        $(this).parents('.commodity').remove()
-    })
+<script src="js/index.js">
 </script>
 </body>
 </html>
