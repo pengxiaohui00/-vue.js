@@ -85,7 +85,7 @@ var Top250Page = {
         e.isLoading = true;
         e.$container.find('.loading').show();
         $.ajax({
-            url: '//api.douban.com/v2/movie/top250',
+            url: 'https//api.douban.com/v2/movie/top250',
             data: {
                 start: e.index||0
             },
@@ -131,7 +131,7 @@ var BeiMeiPage = {
         var e = this;
         e.$container.find('.loading').show();
         $.ajax({
-            url: '//api.douban.com/v2/movie/us_box',
+            url: 'https//api.douban.com/v2/movie/us_box',
             dataType: 'jsonp'
         }).done(function(ret){
             callback&&callback(ret)
@@ -175,7 +175,7 @@ var SearchPage = {
         var e = this;
         e.$container.find('.loading').show()
         $.ajax({
-            url: '//api.douban.com/v2/movie/search',
+            url: 'https//api.douban.com/v2/movie/search',
             data: {
                 q: keyword
             },
