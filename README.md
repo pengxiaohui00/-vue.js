@@ -1,10 +1,4 @@
 # project
-我的个人项目
+平时做的一些小作品
 
-musicPlayer https://pengxiaohui00.github.io/project/musicPlayer/music.html
 
-TheUserLogin https://pengxiaohui00.github.io/project/TheUserLogin/index.html
-
-ASongOfIceAndFire https://pengxiaohui00.github.io/project/ASongOfIceAndFire/index.html
-
-shoppingTrolley https://pengxiaohui00.github.io/project/shoppingTrolley2/index.html

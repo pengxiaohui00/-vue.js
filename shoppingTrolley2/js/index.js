@@ -16,7 +16,7 @@ function getDate(){
 for(var i=0;i<3;i++){
     var rand =Math.floor(Math.random()*100);
 var date ={
-    img:'//picsum.photos/200/?image='+rand,
+    img:'http://picsum.photos/200/?image='+rand,
 name:'珍珠',
 price:'￥'+rand
 };
