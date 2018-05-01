@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>瀑布流效果</title>
+    <style>
+        div.item{
+            position: absolute;
+            width: 200px;
+            margin: 10px;
+            transition: all 1s;
+        }
+        div#content{
+            position: relative;
+        }
+        .part1{
+            background-color: #f00;
+            height: 200px;
+        }
+        .part2{
+            background-color: #0f0;
+            height: 300px;
+        }
+        .part3{
+            background-color: #00f;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+<div id="content">
+    <div class="item part1">1</div>
+    <div class="item part2">2</div>
+    <div class="item part3">3</div>
+    <div class="item part1">4</div>
+    <div class="item part1">5</div>
+    <div class="item part2">6</div>
+    <div class="item part2">7</div>
+    <div class="item part3">8</div>
+    <div class="item part1">9</div>
+    <div class="item part2">10</div>
+    <div class="item part2">11</div>
+    <div class="item part2">12</div>
+    <div class="item part3">13</div>
+    <div class="item part3">14</div>
+    <div class="item part1">15</div>
+    <div class="item part2">16</div>
+    <div class="item part3">17</div>
+    <div class="item part1">18</div>
+    <div class="item part1">19</div>
+    <div class="item part2">20</div>
+    <div class="item part2">21</div>
+    <div class="item part3">22</div>
+    <div class="item part1">23</div>
+    <div class="item part2">24</div>
+    <div class="item part2">25</div>
+    <div class="item part2">26</div>
+    <div class="item part3">27</div>
+    <div class="item part3">28</div>
+</div>
+<script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.js"></script>
+<script>
+    function waterFall() {
+        //列数
+        var widthNum=parseInt($(window).width()/$(".item").outerWidth(true))
+        //列的高度
+        var       allHeight=[];
+//        初始化
+        for (var i=0;i<widthNum;i++){
+            allHeight.push(0)
+        }
+//        遍历
+        $(".item").each(function () {
+            var $cur=$(this),
+                    indx=0,
+                    //最小值
+                    minAllHeight=allHeight[0];
+            console.log(allHeight.length);
+//            找到每行的最小列，从小到大排列
+            for (var j=0;j<allHeight.length;j++){
+                if (allHeight[j]<minAllHeight){
+                    minAllHeight=allHeight[j];
+                    indx=j;
+                }
+            }
+            //修改样式
+            $cur.css({
+                "left":indx*$cur.outerWidth(true),
+                "top":minAllHeight
+            });
+            //当前高度
+            allHeight[indx]=minAllHeight+$cur.outerHeight(true);
+        })
+    }
+
+    waterFall();
+    //当调整浏览器窗口的大小时,再次重新布局
+    $(window).on("resize",function () {
+        waterFall()
+    })
+//若是图片应先判断是否加载，再执行操作
+</script>
+</body>
+</html>
